@@ -39,6 +39,6 @@ var LoggingDriverMinimumVersion = map[LoggingDriver]DockerVersion{
 	SplunklogsDriver: Version_1_22,
 	LogentriesDriver: Version_1_25,
 	SumoLogicDriver:  Version_1_29,
-	PapertrailDriver: Version_1_22,
+	PapertrailDriver: Version_1_29,
 	NoneDriver:       Version_1_19,
 }
