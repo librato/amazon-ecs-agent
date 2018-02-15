@@ -128,6 +128,8 @@ func (agent *ecsAgent) appendLoggingDriverCapabilities(capabilities []*ecs.Attri
 		requiredVersion := dockerclient.LoggingDriverMinimumVersion[loggingDriver]
 		if _, ok := knownVersions[requiredVersion]; ok {
 			capabilities = appendNameOnlyAttribute(capabilities, capabilityPrefix+"logging-driver."+string(loggingDriver))
+		} else {
+			seelog.Warn(loggingDriver+" loggingDriver not enabled due to unsuppported Docker version")
 		}
 	}
 	return capabilities
